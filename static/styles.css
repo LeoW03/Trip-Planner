@@ -1,0 +1,249 @@
+body, html
+{
+    height: 100%;
+}
+
+
+.navbar
+{
+    padding-top: 0;
+}
+
+.footer
+{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5%;
+    text-align: center;
+    padding-top: .75%;
+}
+
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+
+    padding:0 0 0 0;
+    margin:0 0 0 0;
+    height: 77px;
+    width: 290px;
+}
+
+nav .navbar-brand:hover
+{
+    text-decoration: none;
+}
+
+/* colors for brand */
+nav .navbar-brand .blue
+{
+    color: #537fbe;
+}
+nav .navbar-brand .red
+{
+    color: #ea433b;
+}
+nav .navbar-brand .yellow
+{
+    color: #f5b82e;
+}
+nav .navbar-brand .green
+{
+    color: #2e944b;
+}
+
+nav .navbar-brand .black
+{
+    color: black;
+}
+
+main .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+main
+{
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* center contents */
+    text-align: center;
+}
+
+main img
+{
+    /* constrain images on small screens */
+    max-width: 100%;
+}
+main table
+{
+    /* left-align contents */
+    text-align: left;
+}
+
+main tfoot
+{
+    /* boldface tables' footers */
+    font-weight: bold;
+}
+
+.background
+{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-clip: border-box;
+    height: 100%;
+}
+
+.background-lists
+{
+    background-image: url('/static/pictures/plan.jpg');
+}
+
+.background-add
+{
+    background-image: url('/static/pictures/beach.jpg');
+}
+
+.background-items
+{
+    background-image: url('/static/pictures/pack.jpg');
+}
+
+.background-register
+{
+    background-image: url('/static/pictures/villa.jpg');
+}
+
+.background-login
+{
+    background-image: url('/static/pictures/sunset.jpg');
+}
+
+.center
+{
+    text-align: center;
+}
+
+#container
+{
+    margin: 10px 0 10px 0;
+}
+
+.list
+{
+    display: block;
+    height: 50px;
+    width: 300px;
+    border-radius: 20px;
+    border: 2px solid black;
+    padding: 5px;
+    overflow: hidden;
+    margin: auto;
+    color:black;
+    text-decoration: none;
+    font: 30px Impact;
+    text-shadow: 2px 2px white;
+    display: inline-block;
+    position: relative;
+}
+
+#container:hover .list
+{
+    box-shadow: 1.5px 1.5px 2px darkblue, 0 0 25px lightblue, 1px 1px 5px blue;
+    text-decoration: none;
+    color: black;
+}
+
+.delete
+{
+    display: block;
+    height: 30px;
+    width: 30px;
+    border-radius: 20px;
+    border: 1px solid white;
+    overflow: hidden;
+    margin: 10px 10px;
+    color: white;
+    text-decoration: none;
+    font: 10px Impact;
+    display: inline-block;
+    background: white;
+    opacity: 0;
+
+}
+
+div .delete1
+{
+    position: absolute;
+}
+
+#container:hover .delete
+{
+    box-shadow: 1.5px 1.5px 2px darkblue, 0 0 25px lightblue, 1px 1px 5px blue;
+    text-decoration: none;
+    color: black;
+    opacity: 1;
+}
+
+.selector
+{
+    height: 35px;
+    width: 175px;
+}
+
+.text
+{
+    text-align: center;
+    font: 20px;
+    color: white;
+    margin-bottom: 1px;
+}
+
+.packed
+{
+    color: grey;
+    text-decoration: line-through;
+}
+
+.button
+{
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
+}
+
+#container div
+{
+    display: inline-block;
+}
+
+div .img
+{
+  padding:0 0 0 0;
+  margin:0 0 0 0;
+
+  width: 29%;
+}
+
+div .title
+{
+  padding:0 0 0 0;
+  margin:0 0 0 0;
+  height: 5%;
+  width: 30%;
+}
+
+.logo
+{
+    text-decoration: none;
+}

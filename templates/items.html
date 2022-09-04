@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Items
+{% endblock %}
+
+{% block main %}
+    <div class=" background background-items">
+    <main class="container p-5">
+        <h3>{{name}}</h3>
+        <table class="table" style="width:100%">
+            <thead class="thead-dark">
+                <tr>
+                    <th style="width:10%">Packed</th>
+                    <th style="width:40%">Item</th>
+                    <th style="width:40%">Notes</th>
+                    <th style="width:10%">Remove</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if items %}
+                    {% for item in items %}
+                        <tr {% if item['packed'] == 'TRUE' %} class="packed table-secondary" {% else %} class="table-light" {% endif %}>
+                            <td>
+                                <form action="/pack/{{item['id']}}" method="post">
+                                    <button input type="hidden" name="packed" {% if item['packed'] == 'TRUE' %} class="packed" {% endif %}>
+                                        <img src="/static/pictures/suitcase.jpg" alt="pack" class="button">
+                                    </button>
+                                </form>
+                            </td>
+                            <td>
+                                {{item['item']}}
+                            </td>
+                            <td>
+                                {{item['notes']}}
+                            </td>
+                            <td>
+                                <form action="/deleteitem/{{item['id']}}" method="post">
+                                    <button type="submit" name="delete">
+                                        x
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="4" class="center table-light">
+                            Looks like you don't have any items yet... Go ahead and plan your next trip!
+                        </td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+        <table style="width:100%">
+            <tfoot>
+                <tr>
+                    <form action="/items" method="post">
+                        <td style="width:40%" class="center">
+                            <label for="item">Item:</label>
+                            <Input type="text" id="item" name="item">
+                        </td>
+                        <td style="width:40%" class="center">
+                            <label for="notes">Notes:</label>
+                            <Input type="text" id="notes" name="notes">
+                        </td>
+                        <td style="width:20%" class="center">
+                            <button class="btn btn-primary" type="submit">
+                                Add
+                            </button>
+                        </td>
+                    </form>
+                </tr>
+            </tfoot>
+        </table>
+    </main>
+
+
+
+{% endblock %}

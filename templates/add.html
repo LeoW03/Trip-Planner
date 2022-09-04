@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Lists
+{% endblock %}
+
+{% block main %}
+
+    <div class=" background background-add">
+    <main class="container p-5">
+        <form action="/add" method="post">
+            <div class="form-group">
+                <input autofocus class="form-control center" name="name" placeholder="Trip Name" type="text">
+            </div>
+            <div class="form-group">
+                <p class="text">Select List Colour:</p>
+                <input type="color" name="colour" value="#ffffff" class="selector" id="colourpad">
+            </div>
+            <button class="btn btn-primary" type="submit">Create</button>
+        </form>
+    </main>
+    <script>
+        setRandomColour();
+    </script>
+{% endblock %}

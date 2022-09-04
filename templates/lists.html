@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+
+
+{% block title %}
+    My Lists
+{% endblock %}
+
+{% block main %}
+    <div class=" background background-lists">
+    <main class="container p-5">
+        {% if lists %}
+            <h3 class="center">{{username}}'s Lists</h3>
+            {% for list in lists %}
+                <div id="container">
+                    <div class="center">
+                        <form action="/" method="post">
+                            <button class="list inline" style="background:{{list['colour']}}" input type="hidden" value="{{list['id']}}" name="list_id">
+                                {{list['name']}}
+                            </button>
+                        </form>
+                    </div>
+                    <div class="delete1">
+                        <form action="/deletelist/{{list['id']}}" method="post" onsubmit="return confirm('Are you sure? This list will be deleted FOREVER!....ever...ever..ever');">
+                            <button class="delete inline" input type="hidden">
+                                X
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p class="center">Looks like you don't have any lists yet... Hit the 'add trip' button and plan your next trip!</p>
+        {% endif %}
+        <form action="/add">
+            <button class="btn btn-primary" input type="hidden">+</button>
+        </form>
+    </main>
+{% endblock %}
